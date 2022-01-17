@@ -17,6 +17,11 @@
     justify-content: space-evenly;
 }
 
+.nav-display > a {
+    text-decoration: none;
+    color: black;
+}
+
 .selected {
     height: auto;
     background-color: paleturquoise;

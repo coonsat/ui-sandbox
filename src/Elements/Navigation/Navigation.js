@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 import { sidebar } from './data';
+import { NavLink } from 'react-router-dom';
 
 
 const Sidebar = () => {
@@ -10,7 +11,7 @@ const Sidebar = () => {
     console.log(sidebar)
 
     return (
-        <div>
+        <div className="navigation">
             <ul>
                 { sidebar && sidebar.map( (item, index) => {
                     return <li 
@@ -19,8 +20,10 @@ const Sidebar = () => {
                               onClick={() => setSelected(item)}
                             >
                                 <div className="nav-display">
-                                    {item.icon} {item.title}
-                                    {selected.title === item.title ? item.open : item.closed}
+                                    <NavLink to={`${item.path}`}>
+                                        {item.icon} {item.title}
+                                        {selected.title === item.title ? item.open : item.closed}
+                                    </NavLink>
                                 </div>
 
                                 <ul className={`sub-nav ${selected.title === item.title ? "open" : "hide"}`}>
@@ -28,7 +31,6 @@ const Sidebar = () => {
                                         return <p>{sub.title}</p>
                                     })}
                                 </ul>
-
                            </li>
                 })}
             </ul>

@@ -5,20 +5,18 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 // Component import
 import Navigation from './Elements/Navigation/Navigation';
 import Home from './Elements/Home';
+import Calendar from './Elements/Calendar/Calendar';
+import ListView from './Elements/ListView/ListView';
 
 function App() {
   return (
     <div className="App">
-      <div className="intro">
-        <h2>UI Sandbox</h2>
-        <p>A personal collection of all visual elements made with css and react</p>
-        <p>Take these components and alter them as you see fit.</p>
-      </div>
-
       <Navigation />
       <Routes>
         <Route>
-          <Route exact path="/" element={<Home />}/>
+          <Route exact path="/home" element={<Home />}/>
+          <Route exact path="/calendars" element={<Calendar />}/>
+          <Route exact path="/content-manager" element={<ListView />}/>
         </Route>
       </Routes>
     </div>
