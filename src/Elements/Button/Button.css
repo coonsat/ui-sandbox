@@ -1,0 +1,13 @@
+.btn {
+    padding: 7px 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-small {}
+
+.btn-large {}
