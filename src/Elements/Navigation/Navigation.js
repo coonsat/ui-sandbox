@@ -8,8 +8,6 @@ const Sidebar = () => {
     const [selected, setSelected] = useState(sidebar[0]);
     const [toggle, setToggle] = useState(false);
 
-    console.log(sidebar)
-
     return (
         <div className="navigation">
             <ul>

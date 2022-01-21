@@ -8,6 +8,10 @@ import Home from './Elements/Home';
 import Calendar from './Elements/Calendar/Calendar';
 import ListView from './Elements/ListView/ListView';
 
+// Dummy Data
+import { formattedList } from './Data/listview';
+
+
 function App() {
   return (
     <div className="App">
@@ -16,7 +20,7 @@ function App() {
         <Route>
           <Route exact path="/home" element={<Home />}/>
           <Route exact path="/calendars" element={<Calendar />}/>
-          <Route exact path="/content-manager" element={<ListView />}/>
+          <Route exact path="/content-manager" element={<ListView data={formattedList} />}/>
         </Route>
       </Routes>
     </div>

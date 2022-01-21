@@ -1,10 +1,10 @@
 import React from 'react'
 import './ListView.css';
 import '../Button/Button.css'
-import { formattedList } from '../../Data/listview';
 import { AiOutlineSearch } from 'react-icons/ai';
 
-const ListView = () => {
+const ListView = ({ data }) => {
+
     return (
         <div className="content">
             <div className="content-manager-container">
@@ -23,11 +23,16 @@ const ListView = () => {
                 </div>
                 
                 <div className="content-manager-content">
+                    <div className="table-header">
+                        {data && Object.keys(data[0]).map(key => {
+                            return <div className="header-item">{key}</div>
+                        })}
+                    </div>
                     <ul>
-                        {formattedList.map( (item, index) => {
+                        {data.map( (item, index) => {
                             return ( 
                                 <li className="row"
-                                    key={index}>{item.name} {item.email}
+                                    key={index}>{item.name} {item.email} {item.country} {item.postcode} {item.phone}
                                 </li>
                             )
                         })}
